@@ -1,0 +1,85 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install QA project dependencies",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pip",
+				"install",
+				"-r",
+				"requirements.txt"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "Run all tests",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run UI tests in Chrome",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/ui",
+				"--browser-name=chrome"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run UI tests in Firefox",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/ui",
+				"--browser-name=firefox"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run API tests",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/api"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run n11 load test",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\locust.exe",
+			"args": [
+				"-f",
+				"load/locustfile.py",
+				"--headless",
+				"-u",
+				"1",
+				"-r",
+				"1",
+				"-t",
+				"1m"
+			],
+			"isBackground": false,
+			"group": "test"
+		}
+	]
+}

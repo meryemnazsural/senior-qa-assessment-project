@@ -1,0 +1,8 @@
+locust==2.37.10
+playwright==1.54.0
+pytest==8.4.2
+pytest-dotenv==0.5.2
+pytest-html==4.1.1
+pytest-playwright==0.7.1
+python-dotenv==1.1.1
+requests==2.32.5
