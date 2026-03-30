@@ -5,7 +5,11 @@ __pycache__/
 playwright-report/
 test-results/
 htmlcov/
+report.html
+*.tmp
+*.bak
 *.pyc
 *.pyo
 *.pyd
 *.log
+

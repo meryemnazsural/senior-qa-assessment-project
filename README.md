@@ -1,6 +1,20 @@
 # Senior QA Engineer Assessment Project
 
-Single Python project covering the requested UI automation, API testing, and load testing scope.
+Submission-ready Python QA automation project covering the requested UI automation, API testing, and load testing scope in a single repository.
+
+## Assessment Coverage
+
+- UI automation for the Insider/Insider One careers flow using Playwright and Page Object Model design
+- CRUD API tests for Swagger Petstore using pytest and requests
+- Headless n11 search load scenario using Locust
+- Browser execution verified in Chrome and Firefox
+
+## Verified Execution
+
+- `pytest` passes locally for the full suite
+- UI tests pass in Chrome and Firefox
+- API tests pass against Swagger Petstore
+- Locust scenario completes successfully against n11 with 1 user
 
 ## Stack
 
@@ -26,7 +40,7 @@ Single Python project covering the requested UI automation, API testing, and loa
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-playwright install chrome firefox
+python -m playwright install chrome firefox
 copy .env.example .env
 ```
 
@@ -74,3 +88,7 @@ locust -f load/locustfile.py --headless -u 1 -r 1 -t 1m
 - The live careers experience has changed over time; the UI flow is implemented against the original assessment steps with selectors made as tolerant as possible.
 - `VERIFY_SSL=false` is included for environments with corporate TLS interception; set it to `true` if your machine trusts the target certificates normally.
 - The generated pytest HTML report is written to `report.html` in the repository root.
+
+## Author
+
+Meryem Naz Sural
